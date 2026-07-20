@@ -42,13 +42,25 @@ document.querySelector('#btnGoToTwo').addEventListener('click', () => {
         return; 
     }
 
+    else if (userAge.value.trim() < 18 ) {
+        errorAlert.textContent = "VALIDATION ERROR: Age required must be 18 to 100";
+        errorAlert.classList.remove('d-none');
+        return; 
+    }
+    
+    else if (userAge.value.trim() > 100 ) {
+        errorAlert.textContent = "VALIDATION ERROR: Age required must be 18 to 100";
+        errorAlert.classList.remove('d-none');
+        return; 
+    }
+
     else if (userGender.value.trim() === "") {
         errorAlert.textContent = "VALIDATION ERROR: Please select your gender to continue.";
         errorAlert.classList.remove('d-none');
         return; 
     }
 
-    if (userBirthday.value.trim() === "") {
+    else if (userBirthday.value.trim() === "") {
         errorAlert.textContent = "VALIDATION ERROR: Please select your date of birth to continue.";
         errorAlert.classList.remove('d-none');
         return; 
